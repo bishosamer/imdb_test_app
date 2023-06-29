@@ -51,7 +51,22 @@ class MovieDetailsPage extends StatelessWidget {
                       ? Center(
                           child: Text(state.movieDetails.tagline.toString()))
                       : Container(),
-                  Text('released on ${movie.releaseDate}'),
+                  Row(
+                    children: [
+                      Text('released on ${movie.releaseDate}'),
+                      const Spacer(),
+                      Text('Rated: ${movie.adult ? 'R' : 'PG'}'),
+                      const Spacer(),
+                      movie.video
+                          ? MaterialButton(
+                              onPressed: () => ScaffoldMessenger.of(context)
+                                  .showSnackBar(
+                                      SnackBar(content: Text(movie.title))),
+                              child:
+                                  const Icon(Icons.video_collection_outlined))
+                          : Container(),
+                    ],
+                  ),
                   const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
