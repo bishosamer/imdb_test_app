@@ -11,3 +11,7 @@ class LatestMoviesLoaded extends LatestMoviesState {
 }
 
 class LatestMoviesLoading extends LatestMoviesState {}
+
+class LatestMoviesClosed extends LatestMoviesState {}
+
+class LatestMoviesError extends LatestMoviesState {}

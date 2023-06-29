@@ -1,9 +1,7 @@
-import 'dart:convert';
-
 class Movie {
   final bool adult;
   final String backdropPath;
-  final List<int> genreIds;
+
   final int id;
   final String originalLanguage;
   final String originalTitle;
@@ -19,7 +17,6 @@ class Movie {
   Movie(
       {required this.adult,
       required this.backdropPath,
-      required this.genreIds,
       required this.id,
       required this.originalLanguage,
       required this.originalTitle,
@@ -36,7 +33,6 @@ class Movie {
     return Movie(
         adult: json['adult'],
         backdropPath: json['backdrop_path'],
-        genreIds: json['genre_ids'].cast<int>(),
         id: json['id'],
         originalLanguage: json['original_language'],
         originalTitle: json['original_title'],

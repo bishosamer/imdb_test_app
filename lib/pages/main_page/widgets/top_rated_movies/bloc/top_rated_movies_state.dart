@@ -5,7 +5,11 @@ abstract class TopRatedMoviesState {}
 
 class TopRatedMoviesInitial extends TopRatedMoviesState {}
 
+class TopRatedMoviesLoading extends TopRatedMoviesState {}
+
 class TopRatedMoviesLoaded extends TopRatedMoviesState {
   final List<Movie> movies;
   TopRatedMoviesLoaded({required this.movies});
 }
+
+class TopRatedMoviesError extends TopRatedMoviesState {}

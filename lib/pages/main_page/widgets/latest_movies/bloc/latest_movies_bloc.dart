@@ -15,13 +15,29 @@ class LatestMoviesBloc extends Bloc<LatestMoviesEvent, LatestMoviesState> {
     });
     on<LatestMoviesLoad>((event, emit) async {
       emit(LatestMoviesLoading());
-      final movies = await Repository.getMovies(MovieType.latest);
-      emit(LatestMoviesLoaded(movies: movies));
+      try {
+        final movies = await Repository.getMovies(MovieType.latest);
+        emit(LatestMoviesLoaded(movies: movies));
+      } catch (e) {
+        emit(LatestMoviesError());
+      }
     });
     on<LatestMoviesRefresh>((event, emit) async {
-      final movies = await Repository.getMovies(MovieType.latest);
-      print("refreshed");
-      emit(LatestMoviesLoaded(movies: movies));
+      try {
+        final movies = await Repository.getMovies(MovieType.latest);
+        print("refreshed");
+        emit(LatestMoviesLoaded(movies: movies));
+      } catch (e) {
+        emit(LatestMoviesError());
+      }
+    });
+    on<LatestMoviesClose>((event, emit) {
+      timer.cancel();
+    });
+    on<LatestMoviesOpen>((event, emit) {
+      timer = Timer.periodic(interval, (Timer timer) {
+        add((LatestMoviesRefresh()));
+      });
     });
   }
 }

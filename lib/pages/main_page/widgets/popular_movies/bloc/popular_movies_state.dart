@@ -9,3 +9,7 @@ class PopularMoviesLoaded extends PopularMoviesState {
   final List<Movie> movies;
   PopularMoviesLoaded({required this.movies});
 }
+
+class PopularMoviesLoading extends PopularMoviesState {}
+
+class PopularMoviesError extends PopularMoviesState {}

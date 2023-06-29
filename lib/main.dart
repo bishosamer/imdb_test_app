@@ -4,6 +4,7 @@ import 'package:imdb_test_app/pages/main_page/main_page.dart';
 import 'package:imdb_test_app/pages/main_page/widgets/latest_movies/bloc/latest_movies_bloc.dart';
 import 'package:imdb_test_app/pages/main_page/widgets/popular_movies/bloc/popular_movies_bloc.dart';
 import 'package:imdb_test_app/pages/main_page/widgets/top_rated_movies/bloc/top_rated_movies_bloc.dart';
+import 'package:imdb_test_app/pages/main_page/widgets/upcoming_movies/bloc/upcoming_movies_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,14 +21,17 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => PopularMoviesBloc()),
         BlocProvider(create: (context) => LatestMoviesBloc()),
         BlocProvider(create: (context) => TopRatedMoviesBloc()),
+        BlocProvider(create: (context) => UpcomingMoviesBloc()),
       ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+      child: SafeArea(
+        child: MaterialApp(
+          title: 'TMDB',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const HomePage(),
         ),
-        home: HomePage(),
       ),
     );
   }

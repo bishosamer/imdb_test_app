@@ -15,13 +15,19 @@
             "name": "imdb_test_app (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "args": [
+                "--dart-define=API_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OWVkNmY1OTIxNmVmMjdmMjg0MTU4OTJjOWQ1M2Q5MyIsInN1YiI6IjY0OWM1MGRhYzM5MjY2MDEyNWJmYmYyOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uOe4C5zSexowYM4xfiezpvZUoFucHcKLevxllSyM6Qg"]
+       
         },
         {
             "name": "imdb_test_app (release mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "args": [
+                "--dart-define=API_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OWVkNmY1OTIxNmVmMjdmMjg0MTU4OTJjOWQ1M2Q5MyIsInN1YiI6IjY0OWM1MGRhYzM5MjY2MDEyNWJmYmYyOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uOe4C5zSexowYM4xfiezpvZUoFucHcKLevxllSyM6Qg"]
+       
         }
     ]
 }

@@ -9,10 +9,14 @@ part 'popular_movies_state.dart';
 class PopularMoviesBloc extends Bloc<PopularMoviesEvent, PopularMoviesState> {
   PopularMoviesBloc() : super(PopularMoviesInitial()) {
     on<PopularMoviesLoad>((event, emit) async {
-      emit(PopularMoviesInitial());
-      final movies = await Repository.getMovies(MovieType.popular);
-      emit(PopularMoviesLoaded(movies: movies));
+      try {
+        emit(PopularMoviesLoading());
+
+        final movies = await Repository.getMovies(MovieType.popular);
+        emit(PopularMoviesLoaded(movies: movies));
+      } catch (e) {
+        emit(PopularMoviesError());
+      }
     });
-    on<PopularMoviesEvent>((event, emit) {});
   }
 }
