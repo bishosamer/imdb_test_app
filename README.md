@@ -1,16 +1,11 @@
 # imdb_test_app
 
-A new Flutter project.
-
+this is a sample app implementing the TMDB api
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+add the provided access token in launch.json or use this command to run from a command line
 
-A few resources to get you started if this is your first Flutter project:
+```flutter run --dart-define=API_KEY=your_access_token_here``` 
+if you are using your own key use the access token from your TMDB account not the API key
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+tested on ios and android simulators
